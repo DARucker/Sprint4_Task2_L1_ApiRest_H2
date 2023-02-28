@@ -10,13 +10,23 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name="fruta")
 @Data @Builder
+//@NoArgsConstructor
 public class Fruit {
+
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    int id;
+    String name;
+    int cantidadkilos;
 
     public Fruit(int id, String name, int cantidadkilos) {
         this.id = id;
         this.name = name;
         this.cantidadkilos = cantidadkilos;
     }
+
+    public Fruit(){}
 
     public int getId() {
         return id;
@@ -42,9 +52,5 @@ public class Fruit {
         this.cantidadkilos = cantidadkilos;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
-    String name;
-    int cantidadkilos;
+
 }

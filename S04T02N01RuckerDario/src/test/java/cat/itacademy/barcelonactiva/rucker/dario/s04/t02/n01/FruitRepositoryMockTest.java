@@ -19,20 +19,30 @@ public class FruitRepositoryMockTest {
     @Test
     public void whenFindByName_theReturnFruit(){
 
-        /*Fruit fruit01 = Fruit.builder()
+/*        Fruit fruit01 = Fruit.builder()
                 .id(1)
-                .nombre("Apple")
+                .name("Apple")
                 .cantidadkilos(2)
                 .build();
-
         fruitRepository.save(fruit01);
-
-        Fruit found = fruitRepository.findByName(fruit01.getNombre());*/
+        Fruit found01 = fruitRepository.findByName("Apple");*/
 
         Fruit fruit02 = new Fruit(2, "banana", 10);
-        Fruit found02 = fruitRepository.findByName(fruit02.getName());
+        fruitRepository.save(fruit02);
+        Fruit found02 = fruitRepository.findByName("banana");
 
         Assertions.assertTrue(found02.getName().equalsIgnoreCase("banana"));
+        //Assertions.assertTrue(found02.getName().equalsIgnoreCase("naranja"));
 
     }
+    @Test
+    public void whenFindById_theReturnFruit(){
+        Fruit fruit03 = new Fruit(3, "banana", 10);
+        fruitRepository.save(fruit03);
+        Fruit found03 = fruitRepository.findById(1).get();
+        Assertions.assertTrue(found03.getName().equalsIgnoreCase("banana"));
+
+    }
+
+
 }
