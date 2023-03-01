@@ -2,14 +2,20 @@ package cat.itacademy.barcelonactiva.rucker.dario.s04.t02.n01.service;
 
 import cat.itacademy.barcelonactiva.rucker.dario.s04.t02.n01.entity.Fruit;
 import cat.itacademy.barcelonactiva.rucker.dario.s04.t02.n01.repository.FruitRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@RequiredArgsConstructor
+@Service
 public class FruitServiceImpl implements IFruitService {
 
-    @Autowired
-    private FruitRepository fruitRepository;
+
+
+    //@Autowired
+    private final FruitRepository fruitRepository;
 
     @Override
     public Fruit createFruit(Fruit fruit) {
