@@ -1,13 +1,17 @@
 package cat.itacademy.barcelonactiva.rucker.dario.s04.t02.n01.entity;
 
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Positive;
+//import jakarta.persistence.*;
+//import jakarta.validation.constraints.NotEmpty;
+//import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Positive;
 
 @Entity
 @Table(name="fruit")
